@@ -25,6 +25,7 @@ A small collection of Python examples showing how to use the Google Gemini API w
 
    ```bash
    python -m venv .venv
+   Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
    .venv\Scripts\activate
    ```
 
