@@ -1,0 +1,511 @@
+============================================================
+Artificial Intelligence (AI) - Sample Knowledge Base
+============================================================
+
+Version: 1.0
+
+This document provides an overview of modern Artificial Intelligence concepts,
+including Large Language Models, Retrieval-Augmented Generation (RAG),
+LangChain, Ollama, ChromaDB, AI Agents, and Agentic AI.
+
+------------------------------------------------------------
+1. Introduction to Artificial Intelligence
+------------------------------------------------------------
+
+Artificial Intelligence (AI) is the science of creating computer systems that
+can perform tasks which normally require human intelligence. These tasks include
+understanding language, recognizing images, solving problems, making decisions,
+and learning from experience.
+
+Traditional software follows predefined rules written by developers. AI systems,
+especially those powered by Machine Learning, learn patterns from data and make
+predictions based on those patterns.
+
+Today, AI powers many applications including:
+
+- Chatbots
+- Recommendation systems
+- Image recognition
+- Voice assistants
+- Fraud detection
+- Healthcare diagnostics
+- Autonomous vehicles
+- Document analysis
+- Code generation
+
+Generative AI represents one of the biggest advancements in AI. Instead of only
+classifying data, Generative AI can create new content such as text, images,
+audio, video, and source code.
+
+Large Language Models (LLMs) such as Llama, GPT, Mistral, Gemma, and DeepSeek
+are examples of Generative AI models capable of understanding natural language
+and generating human-like responses.
+
+------------------------------------------------------------
+2. Large Language Models (LLMs)
+------------------------------------------------------------
+
+Large Language Models are deep learning models trained on massive collections
+of text from books, websites, articles, and other public sources.
+
+An LLM predicts the next most likely token based on previous tokens. During
+training, the model learns grammar, reasoning patterns, coding syntax, and
+general world knowledge.
+
+Popular open-source LLMs include:
+
+- Llama
+- Mistral
+- Gemma
+- DeepSeek
+- Qwen
+
+Commercial models include:
+
+- GPT
+- Claude
+- Gemini
+
+LLMs are excellent for:
+
+- Question answering
+- Text summarization
+- Translation
+- Coding assistance
+- Content generation
+- Brainstorming
+- Data extraction
+
+However, LLMs have limitations.
+
+Since they only know what they learned during training, they may generate
+incorrect information or hallucinate answers when asked about recent events
+or private company documents.
+
+This limitation is solved using Retrieval-Augmented Generation (RAG).
+
+------------------------------------------------------------
+3. What is Retrieval-Augmented Generation (RAG)?
+------------------------------------------------------------
+
+Retrieval-Augmented Generation, commonly known as RAG, combines information
+retrieval with Large Language Models.
+
+Instead of relying only on the model's internal knowledge, RAG retrieves
+relevant documents from an external knowledge base and provides them as
+additional context to the LLM.
+
+Typical RAG workflow:
+
+Step 1:
+Load documents from various sources.
+
+Examples:
+
+- PDF
+- CSV
+- TXT
+- Markdown
+- Word documents
+- Websites
+- Databases
+
+Step 2:
+Split large documents into smaller chunks.
+
+Typical chunk sizes:
+
+- 300 characters
+- 500 characters
+- 1000 characters
+
+Step 3:
+Generate embeddings for every chunk.
+
+Step 4:
+Store embeddings inside a vector database.
+
+Step 5:
+When a user asks a question:
+
+- Generate embedding for the question.
+- Search similar embeddings.
+- Retrieve relevant chunks.
+- Send retrieved context to the LLM.
+- Generate an accurate response.
+
+Advantages of RAG:
+
+- Uses company-specific knowledge
+- Reduces hallucinations
+- Keeps information up to date
+- Works with private documents
+- No need to retrain the LLM
+
+------------------------------------------------------------
+4. Embeddings
+------------------------------------------------------------
+
+Embeddings convert text into numerical vectors.
+
+Instead of comparing words directly, vector similarity allows the system to
+find semantically related information.
+
+Example:
+
+Sentence A:
+"The customer ordered a laptop."
+
+Sentence B:
+"A person purchased a notebook computer."
+
+Although the wording differs, embeddings place these sentences close together
+in vector space because they have similar meanings.
+
+Popular embedding models include:
+
+- nomic-embed-text
+- bge-large
+- all-MiniLM
+- text-embedding-3-small
+- text-embedding-3-large
+
+------------------------------------------------------------
+5. ChromaDB
+------------------------------------------------------------
+
+ChromaDB is an open-source vector database designed for AI applications.
+
+Its primary purpose is storing embeddings and performing similarity searches.
+
+Key features include:
+
+- Lightweight
+- Easy to use
+- Local storage
+- Persistent collections
+- Fast similarity search
+- Python integration
+
+Typical workflow:
+
+1. Create collection
+2. Generate embeddings
+3. Store embeddings
+4. Query similar vectors
+
+Example use cases:
+
+- Semantic search
+- Document retrieval
+- RAG pipelines
+- AI assistants
+- Knowledge management
+
+ChromaDB integrates seamlessly with LangChain and Ollama, making it an
+excellent choice for local AI applications.
+
+------------------------------------------------------------
+6. Ollama
+------------------------------------------------------------
+
+Ollama enables developers to run Large Language Models locally on their own
+machines.
+
+Instead of calling cloud APIs, developers can download and execute models
+directly on Windows, Linux, or macOS.
+
+Benefits include:
+
+- Privacy
+- Offline usage
+- No API cost
+- Faster local inference
+- Full control over models
+
+Popular Ollama models:
+
+- llama3
+- mistral
+- gemma
+- deepseek
+- qwen
+- phi
+
+Embedding models include:
+
+- nomic-embed-text
+- bge-m3
+
+Common commands:
+
+ollama pull llama3
+
+ollama run llama3
+
+ollama list
+
+ollama serve
+
+Python applications can communicate with Ollama using the REST API or the
+langchain-ollama package.
+
+------------------------------------------------------------
+7. LangChain
+------------------------------------------------------------
+
+LangChain is one of the most popular frameworks for building applications with
+Large Language Models.
+
+Rather than directly calling an LLM, LangChain provides reusable components.
+
+Major components include:
+
+Document Loaders
+
+Load data from:
+
+- PDF
+- CSV
+- HTML
+- Markdown
+- Word documents
+- Websites
+
+Text Splitters
+
+Split documents into manageable chunks.
+
+Embeddings
+
+Generate vector embeddings.
+
+Vector Stores
+
+Store embeddings in databases such as:
+
+- ChromaDB
+- FAISS
+- Pinecone
+- Milvus
+
+Retrievers
+
+Retrieve relevant documents using similarity search.
+
+Prompt Templates
+
+Create reusable prompts.
+
+Chains
+
+Connect multiple processing steps together.
+
+Memory
+
+Maintain conversation history.
+
+Agents
+
+Allow LLMs to make decisions and invoke tools.
+
+------------------------------------------------------------
+8. AI Agents
+------------------------------------------------------------
+
+An AI Agent is an intelligent system capable of planning, reasoning, making
+decisions, and using tools to complete tasks.
+
+Unlike a simple chatbot, an AI Agent can determine what actions are necessary
+to accomplish a goal.
+
+Example:
+
+User asks:
+
+"Summarize all PDF files in this folder."
+
+The AI Agent can:
+
+- Search the folder
+- Read PDF files
+- Extract text
+- Summarize content
+- Save results
+- Return a final report
+
+An AI Agent usually consists of:
+
+- LLM
+- Memory
+- Planning
+- Tool execution
+- Reasoning
+- Observation
+
+Agents can use tools like:
+
+- Calculator
+- Search engine
+- Python interpreter
+- Database
+- REST APIs
+- File system
+
+------------------------------------------------------------
+9. Agentic AI
+------------------------------------------------------------
+
+Agentic AI extends traditional AI Agents.
+
+Instead of performing a single task, Agentic AI can:
+
+- Plan
+- Reflect
+- Learn
+- Retry
+- Coordinate
+- Collaborate
+- Execute long-running workflows
+
+Characteristics:
+
+Goal-oriented
+
+Works toward objectives instead of responding to individual prompts.
+
+Planning
+
+Breaks large tasks into smaller subtasks.
+
+Tool Usage
+
+Chooses appropriate tools automatically.
+
+Memory
+
+Remembers previous interactions.
+
+Reflection
+
+Evaluates previous results and improves future actions.
+
+Multi-Agent Collaboration
+
+Multiple specialized agents work together.
+
+Examples:
+
+Research Agent
+
+Searches the web.
+
+Coding Agent
+
+Writes software.
+
+Testing Agent
+
+Runs automated tests.
+
+Documentation Agent
+
+Generates technical documentation.
+
+Reviewer Agent
+
+Reviews outputs before final delivery.
+
+------------------------------------------------------------
+10. Sample Local AI Architecture
+------------------------------------------------------------
+
+User Question
+
+↓
+
+LangChain
+
+↓
+
+Text Embedding
+
+↓
+
+ChromaDB
+
+↓
+
+Relevant Documents
+
+↓
+
+Ollama (Llama3)
+
+↓
+
+Final Answer
+
+This architecture enables completely offline AI applications while maintaining
+good accuracy through Retrieval-Augmented Generation.
+
+------------------------------------------------------------
+11. Real-World Applications
+------------------------------------------------------------
+
+Many organizations are adopting AI technologies.
+
+Examples include:
+
+Customer Support
+
+Answer customer questions using company documentation.
+
+Software Development
+
+Generate code and explain APIs.
+
+Healthcare
+
+Summarize patient records.
+
+Education
+
+Create personalized tutoring systems.
+
+Finance
+
+Analyze reports and detect fraud.
+
+Legal
+
+Search contracts and summarize legal documents.
+
+Manufacturing
+
+Analyze maintenance manuals.
+
+Human Resources
+
+Answer employee policy questions.
+
+------------------------------------------------------------
+12. Conclusion
+------------------------------------------------------------
+
+Modern AI applications increasingly combine multiple technologies rather than
+relying on standalone language models.
+
+A typical production-ready architecture includes:
+
+- LangChain for orchestration
+- Ollama for local LLM inference
+- ChromaDB for vector storage
+- Embeddings for semantic search
+- RAG for accurate document retrieval
+- AI Agents for intelligent task execution
+- Agentic AI for autonomous multi-step workflows
+
+Together, these technologies enable developers to build secure, scalable,
+cost-effective, and intelligent applications capable of understanding company
+knowledge, reasoning over documents, and performing complex real-world tasks.

@@ -1,0 +1,10 @@
+DATA_DIR_PATH = "data"
+
+CHUNK_SIZE = 500
+CHUNK_OVERLAP = 100
+
+EMBEDDING_MODEL = "nomic-embed-text"
+CHROMA_DB_PATH=".chroma_db"
+SEARCH_KWARGS=3
+
+LLM_MODEL="llama3.2"
