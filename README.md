@@ -323,12 +323,8 @@ An AI engineer usually works across several layers:
 
 This repository contains several hands-on examples for different AI topics:
 
-- ai-agent: task-based agent examples
-- gemini-agentic-ai: agentic AI with Gemini
 - gemini-gen-ai: generative AI experiments
-- ollama-gen-ai: local LLM usage with Ollama
-- ollama-rag-ex: RAG example with Ollama
-- rag-pipeline-example: a simple RAG pipeline example
+- genai-playground: LLM usage with Ollama, Gemini, OpenAI providers
 - rag-playground: a hands-on playground for RAG concepts
 
 ---
