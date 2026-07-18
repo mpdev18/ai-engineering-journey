@@ -5,9 +5,7 @@ from models.request import GenerationRequest
 from providers.base import BaseProvider, GenerationResponse
 from typing import Iterator
 
-
-
-class GeminiProvider:
+class GeminiProvider(BaseProvider):
 
     def __init__(self):
         self.client = Client(api_key=settings.gemini_api_key)

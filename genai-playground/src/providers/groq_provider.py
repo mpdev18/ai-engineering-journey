@@ -1,3 +1,4 @@
+# from groq import Groq
 from openai import OpenAI, Stream
 from openai.types.responses import ResponseStreamEvent
 from config.settings import settings
@@ -5,14 +6,19 @@ from models.request import GenerationRequest
 from providers.base import BaseProvider, GenerationResponse
 from typing import Iterator
 
-class OpenAIProvider(BaseProvider):
+# Note: Using OpenAI to Use Groq API
+class GroqProvider(BaseProvider):
 
     def __init__(self):
-        self.client = OpenAI(api_key=settings.openai_api_key)
-
+        # self.client = Groq(api_key=settings.groq_api_key)
+        self.client = OpenAI(
+            base_url=settings.groq_base_url,
+            api_key=settings.groq_api_key
+        )
+        
     def generate(self, request:GenerationRequest) -> GenerationResponse:
         response = self.client.responses.create(
-            model=settings.openai_model,
+            model=settings.groq_model,
             input=[
                 {
                     "role": "system",

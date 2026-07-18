@@ -1,6 +1,6 @@
 # genai-playground
 
-Lightweight playground for experimenting with generation providers (Ollama, Gemini, OpenAI).
+Lightweight playground for experimenting with generation providers (Ollama, Gemini, Groq, OpenAI).
 
 ## Overview
 
@@ -35,7 +35,7 @@ python src/main.py
 
 Follow the prompts:
 
-- Select a provider when asked (e.g. `ollama`, `gemini`, or `openai`).
+- Select a provider when asked (e.g. `ollama`, `gemini`, `groq`, or `openai`).
 - Type messages and press Enter to send. Type `exit` to quit.
 
 The CLI now shows emojis and improved streaming formatting (flushed chunks and a final newline) for a better user experience.

@@ -10,6 +10,10 @@ class Settings(BaseSettings):
     gemini_model: str
     gemini_api_key: str
 
+    groq_model: str
+    groq_base_url: str
+    groq_api_key: str
+
     openai_model: str
     openai_api_key: str
 

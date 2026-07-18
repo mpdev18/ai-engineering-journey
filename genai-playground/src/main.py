@@ -11,9 +11,15 @@ print("🤖  CHATBOT  🤖".center(60))
 print("=" * 60)
 print("Type 'exit' to exit the conversation  •  Press Enter to send\n")
 
-provider = input("🔌 Select provider (ollama | gemini | openai): ").strip().lower()
-if provider:
-    print(f"Selected provider: {provider} ✅\n")
+# Validate provider selection
+valid_providers = ["ollama", "gemini", "groq", "openai"]
+provider = None
+while provider not in valid_providers:
+    provider = input("🔌 Select provider (ollama | gemini | groq | openai): ").strip().lower()
+    if provider not in valid_providers:
+        print(f"❌ Invalid provider '{provider}'. Please choose from: {', '.join(valid_providers)}\n")
+    else:
+        print(f"Selected provider: {provider} ✅\n")
 
 request = GenerationRequest(prompt="", provider=provider, config=config)
 
